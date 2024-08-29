@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}𝒫𝒽𝑜𝓉𝑜𝒫𝒶𝒾𝓃𝓉𝑒𝓇 | Контакты{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/helper.css')}}">
+<!-- Добавляем стили для иконок Feather -->
+
+{% endblock %}
+
+{% block body %}
+
+{% include 'base_menu.html' %}
+
+<!-- Контакты -->
+<div class="container" id="contacts">
+    <div class="content">
+        <div class="comments-container">
+            <h3>Наши контакты:</h3>
+            <p>Вы всегда можете связаться с нами по указанным контактам для получения помощи, консультаций или обсуждения любых вопросов, связанных с нашим сервисом. Мы с нетерпением ждем вашего обращения!</p>
+            <ul class="navbarContacts">
+                <li class="contactsMenu"><a href="tel:+79875111725">Телефон <i data-feather="phone"></i></a></li>
+                <li class="contactsMenu"><a href="mailto:helperphotopainter@gmail.com"></i>E-mail <i data-feather="mail"></i></a></li>
+                <li class="contactsMenu"><a href="https://t.me/PhotoPainterSupport_bot">Telegram <i data-feather="send"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+<script>
+    // Инициализация иконок Feather
+    feather.replace();
+</script>

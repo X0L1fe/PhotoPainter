@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{%block title %}𝒫𝒽𝑜𝓉𝑜𝒫𝒶𝒾𝓃𝓉𝑒𝓇 | Портфолио{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css')}}">
+<script src="{{ url_for('static', filename='js/fullScreen.js')}}" type="text/javascript" defer></script><!--скрипт полноэкранного режима и навигации-->
+{% endblock %}
+
+{% block body %}
+
+{% include 'base_menu.html' %}
+
+<div class="container">
+    <div class="user-data-image">
+        <h3>Ваше портфолио:</h3>
+    </div>
+    <div class="img-container">
+        {% for image in user_images %}
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <button class="prev-button"><i data-feather="arrow-left"></i></button>
+            <button class="next-button"><i data-feather="arrow-right"></i></button>
+        </div>
+        <div class="img">
+            <img src="{{ url_for('static', filename='EDITOR/' + image.filename) }}" alt="{{ image.original_filename }}">
+            <div class="image-buttons">
+                <button class="fullscreen-button">Полноэкранный режим</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

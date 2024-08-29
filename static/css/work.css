@@ -1,0 +1,231 @@
+#image-container {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 500px; /* Замените на нужную ширину контейнера изображения */
+    height: 500px; /* Замените на нужную высоту контейнера изображения */
+}
+
+#image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Заполнение контейнера изображением */
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border:2px solid rgb(255, 255, 255);
+    width: 500px;
+    height:500px;
+    justify-content: center;
+    align-items: center;
+}
+
+#canvas-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    margin-top: 10px; /* Отступ от верхней части контейнера */
+    padding: 10px 20px; /* Размер кнопки */
+    background-color: transparent; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    border: 2px solid #fff; /* Убираем границу кнопки */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    cursor: pointer; /* Устанавливаем курсор в виде указателя */
+    transition: background-color 0.4s, color 0.4s; /* Плавное изменение цвета при наведении */
+}
+
+button:hover {
+    background-color: #000000; /* Цвет фона кнопки при наведении */
+    color: #ff0000;
+}
+
+.BODY_1.hide, .BODY_2.hide, .image-selection.hide{
+    display: none !important;
+}
+
+.image-editor{
+    display: none;
+}
+
+.file {
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+  }
+  
+  .file-input label {
+    display: block;
+    position: relative;
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out, color 0.4s, border 0.4s;
+  }
+  
+  input:hover + label{
+    transform: scale(1.02);
+    color: #ff0000;
+    
+  }
+  .file-input label:hover{
+    border: 2px solid #ff0000;
+  }
+
+  .file-name {
+    position: absolute;
+    bottom: -35px;
+    left: 10px;
+    font-size: 0.85rem;
+    color: #555;
+  }
+  .file-input {
+    position: relative;
+}
+.image-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    justify-content: center;
+    height: 90vh;
+}
+.image-selection-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    justify-content: center;
+    height: 45vh;
+    width: 95vh;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.9);
+}
+.comments-container {
+    margin-bottom: 20px; /* Отступ после второго комментария */
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.comments-container a {
+    text-decoration: none; /* Убираем декорации с ссылок */
+    color: inherit; /* Наследуем цвет текста */
+    transition: color 0.4s; /* Плавное изменение цвета при наведении */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.comments-container a:hover {
+    color: #ff0000; /* Изменяем цвет при наведении */
+}
+
+
+.image-editor {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 900px;
+}
+
+#image-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px 0 0;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    font-size: 18px;
+    width: 40%;
+    height: 15%;
+    padding: 10px;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control label {
+    margin-right: 10px;
+}
+
+.slider-value {
+    margin-left: 5px;
+}
+
+
+input[type=range] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: transparent;
+    width: 8em;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    margin-top: -8px;
+    -webkit-appearance: none;
+            appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: transparent;
+    border: 0.2em solid #ffffff;
+  }
+  input[type=range]::-moz-range-thumb {
+    -moz-appearance: none;
+         appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: transparent;
+    border: 0.2em solid #ffffff;
+  }
+  input[type=range]::-ms-thumb {
+    appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: transparent;
+    border: 0.2em solid #ffffff;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    background: #ffffff;
+    width: 100%;
+    border-radius: 1vmin;
+    height: 0.5em;
+  }
+  input[type=range]::-moz-range-track {
+    background: #ffffff;
+    width: 100%;
+    border-radius: 1vmin;
+    height: 0.5em;
+  }
+  input[type=range]::-ms-track {
+    background: #ffffff;
+    width: 100%;
+    border-radius: 1vmin;
+    height: 0.5em;
+  }

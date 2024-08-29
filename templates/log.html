@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{%block title %}𝒫𝒽𝑜𝓉𝑜𝒫𝒶𝒾𝓃𝓉𝑒𝓇 | Вход{% endblock %}
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="{{ url_for('static', filename='js/captcha-modal.js')}}" type="text/javascript" defer></script>
+{% endblock %}
+{% block body %}
+
+<!--форма входа-->
+{% if show_captcha_modal %}
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            showCaptchaModal();
+        });
+    </script>
+{% endif %}
+<div class="BODY_1"></div>
+<div class="BODY_2"></div>
+<section>
+    <div class="form-box">
+        <div class="form-value">
+            <div class="page" id="logining">
+                <div class="profile"><img src="{{ url_for('static', filename='img/profIcon.png')}}" width="300"></div>
+                <form action="/logining" method="post" id="log">
+                    {{ form.hidden_tag() }}
+                    <h2>Войти</h2>
+                    <div class="inputbox">
+                        <ion-icon name="person-outline"></ion-icon>
+                        {{ form.login_email() }}
+                        <label for="login">Логин/Почта:</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        {{ form.password() }}
+                        <label for="password">Пароль:</label>
+                    </div>
+                    <div class="forget">
+                        <label for="">{{ form.remember_me() }} Запомнить меня</label>
+                    </div>
+                    <button name="button">Войти</button>
+                    <div class="forget"><label for=""><a href="/reset_password_request">Забыли пароль?</a></label></div>
+                    <div class="register">
+                        <p>Нет аккаунта?<a href="/registering"> Зарегистрироваться</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Модальное окно для капчи -->
+<div id="captchaModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Подтверждение капчи</h2>
+        <form method="POST" action="{{ url_for('captcha') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="form-group">
+                <label for="captcha_image">Введите текст с изображения:</label>
+                {% if captcha_image_url %}
+                    <img src="{{ url_for('static', filename='EDITOR/captcha.png') }}" alt="Captcha Image" id="captcha_image">
+                {% else %}
+                    <p>Не удалось загрузить изображение капчи. Проверьте настройки.</p>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <input type="text" name="captcha_input" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Подтвердить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

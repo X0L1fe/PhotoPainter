@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{%block title %}𝒫𝒽𝑜𝓉𝑜𝒫𝒶𝒾𝓃𝓉𝑒𝓇 | О нас{% endblock %}
+
+{% block links %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css')}}">
+{% endblock %}
+
+{% block body %}
+<!--стр о нас-->
+{% include 'base_menu.html' %}
+<!-- partial -->
+<script src='https://unpkg.com/feather-icons' defer></script>
+<script src="{{ url_for('static', filename='js/menu.js')}}" defer></script>
+
+<div class="container" id="about">
+  <div class="content">
+    <div class="comments-container">
+      <p class="text_container"><a href="/">PhotoPainter</a> - это мощный и универсальный инструмент, разработанный для творческой
+        обработки и создания фотографий с использованием передовых технологий.
+        Он обладает обширным и разнообразным функционалом, предоставляющим пользователям широкий
+        спектр возможностей в области редактирования, ретуширования, цветокоррекции, композиции и
+        создания искусственных эффектов на изображениях.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{%block title %}𝒫𝒽𝑜𝓉𝑜𝒫𝒶𝒾𝓃𝓉𝑒𝓇{% endblock %}
+
+{% block links %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="{{ url_for('static', filename='js/slider.js')}}" type="text/javascript" defer></script>
+<!--скрипт слайдера-->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css')}}">
+{% endblock %}
+
+{% block body %}
+{% include 'base_menu.html' %}
+
+<div class="container">
+  <div class="content">
+    <div class="comments-container">
+      <h3>Здравствуй, присоединяйся к нам!</h3>
+      <p>Это примеры работ в PhotoPainter, которые Вы можете сделать!<br>
+        Правда они прекрасны? Хочешь также?<br> Попробовать <a href="/workplace">редактор</a></p>
+    </div>
+  </div>
+</div>
+<div class="sim-slider" id="first">
+  <div class="sim-slider">
+    <ul class="sim-slider-list">
+      <li><img src="{{ url_for('static', filename='img/screen.png')}}" alt="screen" class="image"></li>
+      <!-- это экран -->
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/1.jpg')}}" alt="0" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/2.jpg')}}" alt="1" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/3.jpg')}}" alt="2" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/4.jpg')}}" alt="3" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/5.jpg')}}" alt="4" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/6.jpg')}}" alt="5" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/7.jpg')}}" alt="6" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/8.jpg')}}" alt="7" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/9.jpg')}}" alt="8" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/10.jpg')}}" alt="9" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/11.jpg')}}" alt="10" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/12.jpg')}}" alt="11" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/13.jpg')}}" alt="12" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/14.jpg')}}" alt="13" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/15.jpg')}}" alt="14" width=100%>
+      </li>
+      <li class="sim-slider-element"><img src="{{ url_for('static', filename='slider/16.jpg')}}" alt="15" width=100%>
+      </li>
+    </ul>
+    <div class="sim-slider-arrow-left"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+        viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-arrow-left">
+        <line x1="19" y1="12" x2="5" y2="12" />
+        <polyline points="12 19 5 12 12 5" />
+      </svg></i></div>
+    <div class="sim-slider-arrow-right"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+        viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-arrow-right">
+        <line x1="5" y1="12" x2="19" y2="12" />
+        <polyline points="12 5 19 12 12 19" />
+      </svg></i></div>
+    <div class="sim-slider-dots"></div>
+  </div>
+  </ul>
+</div>
+
+
+{% endblock %}

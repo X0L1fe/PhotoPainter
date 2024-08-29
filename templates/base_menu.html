@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{%block title %}{% endblock %}
+
+{% block links %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}"><!--фон-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"><!--всё для меню ниже-->
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css')}}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" defer></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="BODY_1"></div>
+<div class="BODY_2"></div>
+
+<div class="header">
+  <div class="header__logo">
+    <a class="MainLogo" href="/" style="text-decoration: none;"><img
+        src="{{ url_for('static', filename='img/camera_v1-RPBGY.png')}}" width="90">
+      <h2>𝒫𝒽𝑜𝓉𝑜𝒫𝒶𝒾𝓃𝓉𝑒𝓇</h2>
+    </a>
+  </div>
+  <nav class="navbar">
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a href="/about" class="navbar__link"><i data-feather="info"></i><span>О нас</span></a>
+      </li>
+      <li class="navbar__item">
+        <a href="/premier" class="navbar__link"><i data-feather="folder"></i><span>Портфолио</span></a>
+      </li>
+      <li class="navbar__item">
+        <a href="/contakts" class="navbar__link"><i data-feather="message-square"></i><span>Контакты</span></a>
+      </li>
+      <li class="navbar__item">
+        <a href="/helper" class="navbar__link"><i data-feather="help-circle"></i><span>Помощь</span></a>
+      </li>
+      {% if current_user.is_authenticated %}
+        <li class="navbar__item">
+          <a href="/workplace" class="navbar__link"><i data-feather="aperture"></i><span>Редактор</span></a>
+        </li>
+        <li class="navbar__item">
+          <a href="/profile" class="navbar__link"><i data-feather="user"></i><span>Профиль</span></a>
+        </li>
+      {% else %}
+        <li class="navbar__item">
+          <a href="/logining" class="navbar__link"><i data-feather="user-check"></i><span>Войти</span></a>
+        </li>
+        <li class="navbar__item">
+          <a href="/registering" class="navbar__link"><i data-feather="user-plus"></i><span>Регистрация</span></a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
+<!-- partial -->
+<script src='https://unpkg.com/feather-icons' defer></script>
+<script src="{{ url_for('static', filename='js/menu.js')}}" defer></script>
+{% endblock %}

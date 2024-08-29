@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  height: 45vh;
+  width: 95vh;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.comments-container {
+  margin-bottom: 20px;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  padding: 10px;
+  color: #fff;
+  line-height: 130%;
+  text-align: center;
+}
+
+.comments-container p {
+  padding-top: 20px;
+  margin: 0;
+  line-height: 30px;
+  font-size: 22px;
+}
+
+.comments-container a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.4s;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comments-container a:hover {
+  color: #ff0000;
+}

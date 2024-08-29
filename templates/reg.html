@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{%block title %}𝒫𝒽𝑜𝓉𝑜𝒫𝒶𝒾𝓃𝓉𝑒𝓇 | Регистрация{% endblock %}
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+{% endblock %}
+{% block body %}
+<!--форма регистрации-->
+<div class="BODY_1"></div>
+<div class="BODY_2"></div>
+<section>
+    <div class="form-box">
+        <div class="form-value">
+            <div class="page" id="registering">
+                <div class="profile"><img src="{{ url_for('static', filename='img/profIcon.png')}}" width="300"></div>
+                <form action="/registering" method="post" id="reg">
+                    {{ form.hidden_tag() }}
+                    <h2>Регистрация</h2>
+                    <div class="inputbox">
+                        <ion-icon name="person-outline"></ion-icon>
+                        {{ form.login() }}
+                        <label for="login">Логин:</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        {{ form.email() }}
+                        <label for="email">E-mail:</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        {{ form.password() }}
+                        <label for="password">Пароль:</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        {{ form.repeat_password() }}
+                        <label for="password_repeat">Повторите пароль:</label>
+                    </div>
+                    <button name="button">Зарегистрироваться</button>
+                    <div class="register">
+                        <p>Есть аккаунт?<a href="/logining"> Войти</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

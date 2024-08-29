@@ -1,0 +1,102 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    margin: 0 auto;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    height: 70vh;
+    width: 150vh;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+.helper-dots{
+    text-align: left;
+}
+
+  .helper-dots li {
+    display: inline-block;
+    vertical-align: top; /* выравниваем по верхнему краю */
+    margin: 20px 10px 0 0; /* отступ между пунктами списка */
+}
+
+  .helper-dots strong {
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .comments-container {
+    margin-bottom: 20px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    color: #fff;
+    line-height: 130%;
+    text-align: center;
+  }
+  
+  .comments-container p {
+    padding-top: 20px;
+    margin: 0;
+    line-height: 30px;
+    font-size: 22px;
+  }
+  .comments-container h3{
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .comments-container a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.4s;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .comments-container a:hover {
+    color: #ff0000;
+  }
+
+  
+.navbarContacts {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.navbarContacts li {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.navbarContacts a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbarContacts a:hover {
+  color: #ff0000;
+}
+
+.navbarContacts i {
+  margin-right: 10px;
+}
+
+.feather-vk:before {
+  content: "\f189";
+}

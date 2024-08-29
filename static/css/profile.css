@@ -1,0 +1,253 @@
+.container {
+    overflow-y: auto;
+    max-height: 700px;
+    z-index: 9999;
+    position: relative;
+}
+
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.img:hover img {
+    transform: scale(1.1);
+}
+
+.img {
+    position: relative;
+    max-width: 350px;
+    height: 250px;
+    border: 5px solid #000000;
+    overflow: hidden;
+}
+
+.img:hover .image-buttons {
+    opacity: 1;
+}
+
+.image-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон */
+    padding: 5px;
+    border-radius: 5px;
+    display: flex; /* Расположение кнопок в строку */
+}
+
+.image-buttons button,
+.image-buttons a {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff; /* Белый цвет текста */
+    padding: 3px 8px; /* Уменьшаем внутренние отступы кнопок */
+    font-size: 12px; /* Уменьшаем размер шрифта */
+    margin-right: 3px; /* Уменьшаем расстояние между кнопками */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.image-buttons button:hover,
+.image-buttons a:hover {
+    background-color: #333; /* Цвет фона при наведении */
+}
+
+.img-container {
+    max-height: 600px; /* Устанавливаем максимальную высоту контейнера */
+    overflow-y: auto; /* Добавляем скролл, если изображения не умещаются */
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%; /* Уменьшим максимальную высоту изображения для центрирования */
+    position: absolute;
+    top: 50%; /* Перемещаем изображение на 50% высоты окна */
+    left: 50%; /* Перемещаем изображение на 50% ширины окна */
+    transform: translate(-50%, -50%); /* Центрируем изображение относительно родительского контейнера */
+}
+
+.close {
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    cursor: pointer;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Стили для модальных кнопок */
+.modal-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-buttons a,
+.modal-buttons button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-buttons a:hover,
+.modal-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.modal-image-buttons {
+    display: none; /* По умолчанию скрываем кнопки */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999; /* Помещаем кнопки над модальным окном */
+}
+
+.modal-image-buttons a,
+.modal-image-buttons button {
+    margin: 0 5px; /* Расстояние между кнопками */
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block; /* Размещаем кнопки в строку */
+}
+
+
+.download-button,
+.delete-button {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.user-data {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 0 0px 25px 0;
+    margin: 0 0 20px 0;
+    height: 25%;
+    width: 30%;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 110%;
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+}
+
+.user-data, .user-data-image h3 {
+    margin: 0;
+    font-weight: bold;
+}
+.user-data a {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 70px;
+    height: 20px;
+    padding: 8px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.4s, border 0.4s; 
+    align-self: flex-end;
+}
+
+.user-data a:hover {
+    color: #ff0000; 
+    border: 2px solid #ff0000;
+}
+.user-data-image {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 15%;
+    width: 20%;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 110%;
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+}
